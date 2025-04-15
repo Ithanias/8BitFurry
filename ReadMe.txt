@@ -1,9 +1,8 @@
 8-Bit Furries Modpack by Ithanias & Metaflame
 
-Version 0.0.4a
+Version 0.0.5a
 Changes:
 	-Al now properly pwips (Fool displays what card it's copying)
-	-The Green shows you the way forward.
 Skins:
 	Deck: (Includes High Contrast variants)
 		Hearts: Jack, Queen, King, Ace
@@ -11,7 +10,7 @@ Skins:
 		Diamonds: Jack, Queen, King, Ace
 		Spades: Jack, Queen, King, Ace
 	
-	Jokers: (26/151?)
+	Jokers: (25/150)
 		Baseball Card
 		Blue Joker
 		Bootstraps
@@ -37,7 +36,6 @@ Skins:
 		Trading Card
 		Trio
 		Wee Joker
-		...what...?
 
 	Spectrals:
 		Immolate
