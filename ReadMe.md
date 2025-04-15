@@ -4,7 +4,7 @@
     <img alt="Download zip file" src="https://img.shields.io/badge/Download-zip_file-gray?style=for-the-badge&labelColor=2BAB22" href="https://github.com/Ithanias/8BitFurry/archive/refs/heads/main.zip">
     <img alt="Steamodded" src="https://img.shields.io/badge/Steamodded-gray?style=for-the-badge&labelColor=dark-gray" href="https://github.com/Steamodded/smods/wiki">
 </div>
-
+<br/>
 <div>
     <img alt="Ko-fi Ithanias" src="https://img.shields.io/badge/Ko--fi-Ithanias-ffdf53?style=for-the-badge&logo=ko-fi" href="https://ko-fi.com/ithanias">
     <img alt="Bluesky Ithanias" src="https://img.shields.io/badge/Bluesky-Ithanias-ffdf53?style=for-the-badge&logo=bluesky" href="https://bsky.app/profile/ithanias.bsky.social">
@@ -13,6 +13,8 @@
 <div>
     <img alt="Bluesky Ithanias" src="https://img.shields.io/badge/Bluesky-Metaflame-5691CE?style=for-the-badge&logo=bluesky" href="https://bsky.app/profile/metaflame.dev">
 </div>
+
+<br/>
 
 By Ithanias & Metaflame
 
