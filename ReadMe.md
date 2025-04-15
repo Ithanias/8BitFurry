@@ -8,7 +8,7 @@
 
 <img alt="Bluesky Ithanias" src="https://img.shields.io/badge/Bluesky-Metaflame-5691CE?style=for-the-badge&logo=bluesky" href="https://bsky.app/profile/metaflame.dev">
 
-by Ithanias & Metaflame
+By Ithanias & Metaflame
 
 Version 0.0.5a
 
