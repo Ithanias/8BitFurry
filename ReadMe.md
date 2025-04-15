@@ -4,6 +4,8 @@ by Ithanias & Metaflame
 
 Version 0.0.5a
 
+### Mod must be played with "Pixel Art Smoothing" ON! It will crash if this option is off!
+
 ---
 
 # Skins:
