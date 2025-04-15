@@ -1,12 +1,12 @@
 # 8-Bit Furries Modpack
 
-![Download zip file](https://img.shields.io/badge/Download-zip_file-gray?style=for-the-badge&labelColor=2BAB22&link=https%3A%2F%2Fgithub.com%2FIthanias%2F8BitFurry%2Farchive%2Frefs%2Fheads%2Fmain.zip)
-![Steamodded](https://img.shields.io/badge/Steamodded-gray?style=for-the-badge&labelColor=dark-gray&link=https%3A%2F%2Fgithub.com%2FSteamodded%2Fsmods%2Fwiki)
+<img alt="Download zip file" src="https://img.shields.io/badge/Download-zip_file-gray?style=for-the-badge&labelColor=2BAB22" href="https://github.com/Ithanias/8BitFurry/archive/refs/heads/main.zip">
+<img alt="Steamodded" src="https://img.shields.io/badge/Steamodded-gray?style=for-the-badge&labelColor=dark-gray" href="https://github.com/Steamodded/smods/wiki">
 
-![Ko-fi Ithanias](https://img.shields.io/badge/Ko--fi-Ithanias-ffdf53?style=for-the-badge&logo=ko-fi&link=https%3A%2F%2Fko-fi.com%2Fithanias)
-![Bluesky Ithanias](https://img.shields.io/badge/Bluesky-Ithanias-ffdf53?style=for-the-badge&logo=bluesky&link=https%3A%2F%2Fbsky.app%2Fprofile%2Fithanias.bsky.social)
+<img alt="Ko-fi Ithanias" src="https://img.shields.io/badge/Ko--fi-Ithanias-ffdf53?style=for-the-badge&logo=ko-fi" href="https://ko-fi.com/ithanias">
+<img alt="Bluesky Ithanias" src="https://img.shields.io/badge/Bluesky-Ithanias-ffdf53?style=for-the-badge&logo=bluesky" href="https://bsky.app/profile/ithanias.bsky.social">
 
-![Bluesky Metaflame](https://img.shields.io/badge/Bluesky-Metaflame-5691CE?style=for-the-badge&logo=bluesky&link=https%3A%2F%2Fbsky.app%2Fprofile%2Fithanias.bsky.social)
+<img alt="Bluesky Ithanias" src="https://img.shields.io/badge/Bluesky-Metaflame-5691CE?style=for-the-badge&logo=bluesky" href="https://bsky.app/profile/metaflame.dev">
 
 by Ithanias & Metaflame
 
@@ -19,7 +19,7 @@ Version 0.0.5a
 # Installation
 
 - Make sure you have [Steamodded](https://github.com/Steamodded/smods/wiki) (and Lovely) installed - follow the steps on the wiki
-- **Download [this repository as a zip file](https://github.com/Ithanias/8BitFurry/archive/refs/heads/main.zip)**.
+- **[Download](https://github.com/Ithanias/8BitFurry/archive/refs/heads/main.zip)** this repository as a zip file
 - Unpack it into the Balatro Mods folder, into its own subfolder (`Balatro/Mods/8BitFurry`)
   - E.g. `main.lua` should be at `Balatro/Mods/8BitFurry/Main.lua`
   - Windows: into `%AppData%\Balatro\Mods\8BitFurry`
