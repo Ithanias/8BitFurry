@@ -1,0 +1,13 @@
+{
+	"id": "8BitFurries",
+	"name": "8-Bit Furries",
+	"author": ["Metaflame, Ithanias"],
+	"description": "Simple cosmetic mod of a bunch of furry friends. Pixel Art by Ithanias, Modpack created by Metaflame (Seriously, it's the only reason this modpack works, give it some love.) King of Diamonds art by fuzzyremi.bsky.social!",
+	"prefix": "8_bit_furries",
+	"badge_colour": "ffc800",
+	"dependencies": [
+		"Steamodded (>=1.0.0~ALPHA-1404b)"
+	],
+	"main_file": "Main.lua",
+	"version": "0.0.3a"
+}

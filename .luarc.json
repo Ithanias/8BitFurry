@@ -1,0 +1,6 @@
+{
+    "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+    "workspace.library": ["../smods-1.0.0-beta-0312b/lsp_def"],
+    "runtime.version": "Lua 5.1",
+    "hint.enable": true
+  }
