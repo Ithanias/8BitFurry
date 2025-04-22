@@ -541,6 +541,23 @@ SMODS.Joker:take_ownership('hologram',
 	false -- true = silent | suppresses mod badge
 )
 
+SMODS.Joker:take_ownership('onyx_agate',
+	{
+		atlas = atlas.jokers.key,
+		pos = { x = 2, y = 8 },
+		loc_txt = {
+			name = "Rhasakani",
+			text = {
+				"Played cards with",
+                "{C:clubs}Club{} suit give",
+                "{C:mult}+#1#{} Mult when scored",
+				"{C:blue,s:0.9}Shiny~"
+			},
+		},
+	},
+	false -- true = silent | suppresses mod badge
+)
+
 SMODS.Joker:take_ownership('oops',
 	{
 		atlas = atlas.jokers.key,
@@ -570,6 +587,24 @@ SMODS.Joker:take_ownership('rocket',
 				"Payout increases by {C:money}$#2#{}",
 				"when {C:attention}Boss Blind{} is defeated",
 				"{C:red,s:0.9}Reach for the stars"
+			},
+		},
+	},
+	false -- true = silent | suppresses mod badge
+)
+
+SMODS.Joker:take_ownership('seeing_double',
+	{
+		atlas = atlas.jokers.key,
+		pos = { x = 4, y = 4 },
+		loc_txt = {
+			name = "Malthy",
+			text = {
+				"{X:mult,C:white} X#1# {} Mult if played",
+                "hand has a scoring",
+                "{C:clubs}Club{} card and a scoring",
+                "card of any other {C:attention}suit",
+				"{C:blue,s:0.8}Different, yet the same"
 			},
 		},
 	},
