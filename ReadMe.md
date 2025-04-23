@@ -8,6 +8,18 @@ Version 0.0.5a
 
 ---
 
+# Installation
+
+- Make sure you have [Steamodded](https://github.com/Steamodded/smods/wiki) (and Lovely) installed - follow the steps on the wiki
+- **Download [this repository as a zip file]https://github.com/Ithanias/8BitFurry/archive/refs/heads/main.zip**.
+- Unpack it into the Balatro Mods folder, into its own subfolder (`Balatro/Mods/8BitFurry`)
+  - E.g. `main.lua` should be at `Balatro/Mods/8BitFurry/main.lua`
+  - Windows: into `%AppData%\Balatro\Mods\8BitFurry`
+  - Linux (WINE/Proton): `~/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro/Mods/8BitFurry`
+  - Mac: `~/Library/Application Support/Balatro/Mods/8BitFurry`
+
+---
+
 # Skins:
 
 ## Deck: (Includes High Contrast variants)
@@ -16,7 +28,8 @@ Version 0.0.5a
 - Diamonds: Jack, Queen, King, Ace
 - Spades: Jack, Queen, King, Ace
 
-## Jokers: (27/150)
+## Jokers: (28/150)
+- Baron
 - Baseball Card
 - Blue Joker
 - Bootstraps
