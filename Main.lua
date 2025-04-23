@@ -471,6 +471,25 @@ SMODS.Joker:take_ownership('cloud_9',
 	false -- true = silent | suppresses mod badge
 )
 
+SMODS.Joker:take_ownership('constellation',
+	{
+		atlas = atlas.jokers.key,
+		pos = { x = 9, y = 10 },
+		loc_txt = {
+			name = "Akashi",
+			text = {
+				"This fay gains",
+                "{X:mult,C:white} X#1# {} Mult every time",
+                "a {C:planet}Planet{} card is used",
+                "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+				"{C:purple,s:0.9}Glittering stars",
+				"{C:red,s:0.8}Art by FuzzyRemi!",
+			},
+		},
+	},
+	false -- true = silent | suppresses mod badge
+)
+
 SMODS.Joker:take_ownership('erosion',
 	{
 		atlas = atlas.jokers.key,
@@ -685,6 +704,23 @@ SMODS.Joker:take_ownership('trading',
 --endregion
 --region ===Rares===
 
+
+SMODS.Joker:take_ownership('baron',
+	{
+		atlas = atlas.jokers.key,
+		pos = { x = 6, y = 12 },
+		loc_txt = {
+			name = "Giga",
+			text = {
+				"Each {C:attention}King{}",
+                "held in hand",
+                "gives {X:mult,C:white} X#1# {} Mult",
+				"{C:blue,s:0.9}Submit to the King's icy glare"
+			},
+		},
+	},
+	false -- true = silent | suppresses mod badge
+)
 
 SMODS.Joker:take_ownership('baseball',
 	{

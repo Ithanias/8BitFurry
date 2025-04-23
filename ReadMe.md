@@ -16,7 +16,7 @@ Version 0.0.5a
 - Diamonds: Jack, Queen, King, Ace
 - Spades: Jack, Queen, King, Ace
 
-## Jokers: (26/150)
+## Jokers: (27/150)
 - Baseball Card
 - Blue Joker
 - Bootstraps
@@ -25,6 +25,7 @@ Version 0.0.5a
 - Cavendish
 - Ceremonial Dagger
 - Cloud 9
+- Constellation
 - Erosion
 - Fibonacci
 - Gros Michel
