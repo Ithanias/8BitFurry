@@ -11,7 +11,7 @@ Version 0.0.5a
 # Installation
 
 - Make sure you have [Steamodded](https://github.com/Steamodded/smods/wiki) (and Lovely) installed - follow the steps on the wiki
-- **Download [this repository as a zip file]https://github.com/Ithanias/8BitFurry/archive/refs/heads/main.zip**.
+- **Download [this repository as a zip file](https://github.com/Ithanias/8BitFurry/archive/refs/heads/main.zip)**.
 - Unpack it into the Balatro Mods folder, into its own subfolder (`Balatro/Mods/8BitFurry`)
   - E.g. `main.lua` should be at `Balatro/Mods/8BitFurry/main.lua`
   - Windows: into `%AppData%\Balatro\Mods\8BitFurry`
