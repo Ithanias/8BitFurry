@@ -84,6 +84,10 @@ Version 0.0.5a
 - High Priestess
 - Chariot
 - Hanged Man
+- Tower
+
+## Enhancments
+- Stone Cards > Obscured
 
 # Changes:
 
