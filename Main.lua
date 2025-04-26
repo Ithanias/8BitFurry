@@ -906,7 +906,35 @@ SMODS.Joker:take_ownership('caino',
 
 --#region ===== Consumables =====
 
+--#region ===== Tarots =====
 --For all consumables, redefine loc_vars and provide base game variables again
+
+SMODS.Consumable:take_ownership('chariot',
+	{
+		atlas = atlas.consumables.key,
+		pos = { x = 7, y = 0 },
+		loc_txt = {
+			name = "Frank",
+			text = {
+				"Enhances {C:attention}#2#{} selected",
+				"card into a",
+				"{C:attention}#1#",
+			},
+		},
+		loc_vars = function(self, info_queue, card)
+			info_queue[#info_queue+1] = G.P_CENTERS.m_steel
+			return {
+				vars = {
+					-- Fun fact! the game *specifically* localizes the card name for tarot cards (etc.) so we gotta do it here too!
+					-- localize() is a base-game function from misc_functions
+					localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv },
+					card.ability.max_highlighted
+				}
+			}
+		end,
+	},
+	false -- true = silent | suppresses mod badge
+)
 
 SMODS.Consumable:take_ownership('fool',
     {
@@ -995,24 +1023,23 @@ SMODS.Consumable:take_ownership('high_priestess',
 	false -- true = silent | suppresses mod badge
 )
 
-SMODS.Consumable:take_ownership('chariot',
+
+SMODS.Consumable:take_ownership('tower',
 	{
 		atlas = atlas.consumables.key,
-		pos = { x = 7, y = 0 },
+		pos = { x = 6, y = 1 },
 		loc_txt = {
-			name = "Chariot",
+			name = "Degyn",
 			text = {
 				"Enhances {C:attention}#2#{} selected",
-				"card into a",
+				"card into an",
 				"{C:attention}#1#",
 			},
 		},
 		loc_vars = function(self, info_queue, card)
-			info_queue[#info_queue+1] = G.P_CENTERS.m_steel
+			info_queue[#info_queue+1] = G.P_CENTERS.m_stone
 			return {
 				vars = {
-					-- Fun fact! the game *specifically* localizes the card name for tarot cards (etc.) so we gotta do it here too!
-					-- localize() is a base-game function from misc_functions
 					localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv },
 					card.ability.max_highlighted
 				}
@@ -1021,7 +1048,8 @@ SMODS.Consumable:take_ownership('chariot',
 	},
 	false -- true = silent | suppresses mod badge
 )
-
+--#endregion
+--#region ===== Spectrals =====
 SMODS.Consumable:take_ownership('immolate',
 	{
 		atlas = atlas.consumables.key,
@@ -1094,7 +1122,8 @@ G.E_MANAGER:add_event(Event({
 	end
 }))
 
---endregion
+--#endregion
+--#endregion
 
 --#region ===== Editions/Seals/Extra =====
 
@@ -1111,6 +1140,24 @@ SMODS.Seal:take_ownership('Purple',
 				"{C:tarot,s:0.9}A gift from the Void",
 			},
 		},
+	},
+	false -- true = silent | suppresses mod badge
+)
+
+SMODS.Enhancement:take_ownership('stone',
+	{
+		atlas = atlas.enhancers.key,
+		pos = { x = 5, y = 0 },
+		loc_txt = {
+			name = "Obscured Card",
+			text = {
+				"{C:chips}+#1#{} Chips",
+                "no rank or suit",
+			},
+		},
+		loc_vars = function(self, info_queue, card)
+			return { vars = { card.ability.bonus } }
+		end,
 	},
 	false -- true = silent | suppresses mod badge
 )
