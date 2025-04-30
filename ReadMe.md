@@ -44,7 +44,7 @@ Version 0.0.5a
 - Diamonds: Jack, Queen, King, Ace
 - Spades: Jack, Queen, King, Ace
 
-## Jokers: (28/150)
+## Jokers: (29/150)
 - Baron
 - Baseball Card
 - Blue Joker
@@ -72,6 +72,7 @@ Version 0.0.5a
 - Stuntman
 - Trading Card
 - Trio
+- Vampire
 - Wee Joker
 
 ## Spectrals:
