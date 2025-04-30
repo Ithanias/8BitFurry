@@ -700,6 +700,23 @@ SMODS.Joker:take_ownership('trading',
 	false -- true = silent | suppresses mod badge
 )
 
+SMODS.Joker:take_ownership('vampire',
+	{
+		atlas = atlas.jokers.key,
+		pos = { x = 2, y = 12 },
+		loc_txt = {
+			name = "Ixen",
+			text = {
+				"This Ibex gains {X:mult,C:white} X#1# {} Mult",
+                "per scoring {C:attention}Enhanced card{} played,",
+                "removes card {C:attention}Enhancement",
+                "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+				"{C:blue,s:0.9}Purifying flame",
+			},
+		},
+	},
+	false -- true = silent | suppresses mod badge
+)
 
 --endregion
 --region ===Rares===
