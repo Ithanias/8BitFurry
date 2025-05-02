@@ -1,6 +1,6 @@
 # 8-Bit Furries Modpack
 
-![Download zip file](https://img.shields.io/badge/Download-zip_file-gray?style=for-the-badge&labelColor=2BAB22&link=https%3A%2F%2Fgithub.com%2FIthanias%2F8BitFurry%2Farchive%2Frefs%2Fheads%2Fmain.zip)
+![Static Badge](https://img.shields.io/badge/Download-zip_file-gray?style=for-the-badge&labelColor=2BAB22&link=https%3A%2F%2Fgithub.com%2FIthanias%2F8BitFurry%2Farchive%2Frefs%2Fheads%2Fmain.zip)
 ![Steamodded](https://img.shields.io/badge/Steamodded-gray?style=for-the-badge&labelColor=dark-gray&link=link=https%3A%2F%2Fgithub.com%2FSteamodded%2Fsmods%2Fwiki)
 
 ![Ko-fi Ithanias](https://img.shields.io/badge/Ko--fi-Ithanias-ffdf53?style=for-the-badge&logo=ko-fi&link=https%3A%2F%2Fko-fi.com%2Fithanias)
