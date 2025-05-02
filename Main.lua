@@ -643,12 +643,12 @@ SMODS.Consumable:take_ownership('chariot',
 )
 
 SMODS.Consumable:take_ownership('fool',
-    {
-        atlas = atlas.consumables.key,
-        pos = { x = 0, y = 0 },
+	{
+		atlas = atlas.consumables.key,
+		pos = { x = 0, y = 0 },
 		-- loc_txt in localization file
-    },
-    false -- true = silent | suppresses mod badge
+	},
+	false -- true = silent | suppresses mod badge
 )
 
 SMODS.Consumable:take_ownership('hanged_man',

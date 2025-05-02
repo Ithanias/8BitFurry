@@ -177,7 +177,6 @@ return {
                     "{C:red,s:0.9}Reach for the stars"
                 },
             },
-
             j_seeing_double = {
                 name = "Malthy",
                 text = {
