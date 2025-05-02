@@ -44,7 +44,7 @@ Version 0.0.5a
 - Diamonds: Jack, Queen, King, Ace
 - Spades: Jack, Queen, King, Ace
 
-## Jokers: (29/150)
+## Jokers: (30/150)
 - Baron
 - Baseball Card
 - Blue Joker
@@ -63,6 +63,7 @@ Version 0.0.5a
 - Ice Cream
 - Obelisk
 - Oops All 6s
+- Riff Raff
 - Rocket
 - Seeing Double
 - Smeared Joker
