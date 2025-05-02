@@ -409,6 +409,7 @@ SMODS.DrawStep:take_ownership('floating_sprite',
 	}, true
 )
 
+--#endregion
 
 --#region ===== Consumables =====
 
