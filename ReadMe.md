@@ -1,19 +1,12 @@
 # 8-Bit Furries Modpack
 
-<div>
-    <img alt="Download zip file" src="https://img.shields.io/badge/Download-zip_file-gray?style=for-the-badge&labelColor=2BAB22" href="https://github.com/Ithanias/8BitFurry/archive/refs/heads/main.zip">
-    <img alt="Steamodded" src="https://img.shields.io/badge/Steamodded-gray?style=for-the-badge&labelColor=dark-gray" href="https://github.com/Steamodded/smods/wiki">
-</div>
+![Download zip file](https://img.shields.io/badge/Download-zip_file-gray?style=for-the-badge&labelColor=2BAB22&link=https%3A%2F%2Fgithub.com%2FIthanias%2F8BitFurry%2Farchive%2Frefs%2Fheads%2Fmain.zip)
+![Steamodded](https://img.shields.io/badge/Steamodded-gray?style=for-the-badge&labelColor=dark-gray&link=link=https%3A%2F%2Fgithub.com%2FSteamodded%2Fsmods%2Fwiki)
+
+![Ko-fi Ithanias](https://img.shields.io/badge/Ko--fi-Ithanias-ffdf53?style=for-the-badge&logo=ko-fi&link=https%3A%2F%2Fko-fi.com%2Fithanias)
+![Bluesky Ithanias](https://img.shields.io/badge/Bluesky-Ithanias-ffdf53?style=for-the-badge&logo=bluesky&link=https%3A%2F%2Fbsky.app%2Fprofile%2Fithanias.bsky.social)
 <br/>
-<div>
-    <img alt="Ko-fi Ithanias" src="https://img.shields.io/badge/Ko--fi-Ithanias-ffdf53?style=for-the-badge&logo=ko-fi" href="https://ko-fi.com/ithanias">
-    <img alt="Bluesky Ithanias" src="https://img.shields.io/badge/Bluesky-Ithanias-ffdf53?style=for-the-badge&logo=bluesky" href="https://bsky.app/profile/ithanias.bsky.social">
-</div>
-
-<div>
-    <img alt="Bluesky Ithanias" src="https://img.shields.io/badge/Bluesky-Metaflame-5691CE?style=for-the-badge&logo=bluesky" href="https://bsky.app/profile/metaflame.dev">
-</div>
-
+![Bluesky Metaflame](https://img.shields.io/badge/Bluesky-Metaflame-5691CE?style=for-the-badge&logo=bluesky&link=https%3A%2F%2Fbsky.app%2Fprofile%2Fmetaflame.dev)
 <br/>
 
 By Ithanias & Metaflame
