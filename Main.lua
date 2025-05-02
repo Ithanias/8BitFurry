@@ -299,15 +299,7 @@ SMODS.Joker:take_ownership('blue_joker',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 7, y = 10 },
-		loc_txt = {
-			name = "Blue",
-			text = {
-				"{C:chips}+#1#{} Chips for each",
-				"remaining card in {C:attention}deck",
-				"{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
-				"{C:chips,s:0.9}A noble Sea Slug"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -316,17 +308,7 @@ SMODS.Joker:take_ownership('cavendish',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 5, y = 11 },
-		loc_txt = {
-			name = "Banangry",
-			text = {
-				"{X:mult,C:white} X#1# {} Mult",
-                "{C:green}#2# in #3#{} chance this",
-                "card is destroyed",
-                "at end of round",
-				"{C:mult,s:0.9}Now you've upset him >:c",
-				"{C:attention,s:0.8}Art by FuzzyRemi!",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -335,15 +317,7 @@ SMODS.Joker:take_ownership('green_joker',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 2, y = 11 },
-		loc_txt = {
-			name = "Green Joker",
-			text = {
-				"{C:mult}+#1#{} Mult per hand played",
-                "{C:mult}-#2#{} Mult per discard",
-                "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
-				--"{C:blue,s:1.1}discord.gg/RXqc9wxWHs",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -352,17 +326,7 @@ SMODS.Joker:take_ownership('gros_michel',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 7, y = 6 },
-		loc_txt = {
-			name = "Banana",
-			text = {
-				"{C:mult}+#1#{} Mult",
-                "{C:green}#2# in #3#{} chance this",
-                "card is destroyed",
-                "at end of round",
-				"{C:blue,s:0.9}:P",
-				"{C:attention,s:0.8}Art by FuzzyRemi!",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -371,15 +335,7 @@ SMODS.Joker:take_ownership('ice_cream',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 4, y = 10 },
-		loc_txt = {
-			name = "Bedi",
-			text = {
-				"{C:chips}+#1#{} Chips",
-				"{C:chips}-#2#{} Chips for",
-				"every hand played",
-				"{C:green,s:0.9}Yap!"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -388,12 +344,7 @@ SMODS.Joker:take_ownership('joker',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 0, y = 0 },
-		loc_txt = {
-			name = "Jimbo",
-			text = {
-				"{C:red,s:1.1}+#1#{} Mult",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -402,14 +353,7 @@ SMODS.Joker:take_ownership('splash',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 6, y = 10 },
-		loc_txt = {
-			name = "Kink",
-			text = {
-				"Every {C:attention}played card",
-                "counts in scoring",
-				"{C:blue,s:0.9}Big fish!",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -418,15 +362,7 @@ SMODS.Joker:take_ownership('riff_raff',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 1, y = 12 },
-		loc_txt = {
-			name = "Zard",
-			text = {
-				"When {C:attention}Blind{} is selected,",
-                "create {C:attention}#1# {C:blue}Common{C:attention} Jokers",
-                "{C:inactive}(Must have room)",
-				"{C:blue,s:0.9}Lifetime supply of kobolds",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -438,15 +374,7 @@ SMODS.Joker:take_ownership('bootstraps',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 9, y = 8 },
-		loc_txt = {
-			name = "Socks",
-			text = {
-				"{C:mult}+#1#{} Mult for every",
-                "{C:money}$#2#{} you have",
-                "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
-				"{C:attention,s:0.8}Pick yourself up by your... socks",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -455,17 +383,7 @@ SMODS.Joker:take_ownership('ceremonial',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 5, y = 5 },
-		loc_txt = {
-			name = "Lagos",
-			text = {
-				"When {C:attention}Blind{} is selected,",
-				"destroy Joker to the right",
-				"and permanently add {C:attention}double",
-				"its sell value to this {C:red}Mult",
-				"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
-				"{C:purple,s:0.8}Always hungry...",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -474,16 +392,7 @@ SMODS.Joker:take_ownership('cloud_9',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 7, y = 12 },
-		loc_txt = {
-			name = "Stratus",
-			text = {
-				"Earn {C:money}$#1#{} for each",
-                "{C:attention}9{} in your {C:attention}full deck",
-                "at end of round",
-                "{C:inactive}(Currently {C:money}$#2#{}{C:inactive})",
-				"{C:blue,s:0.8}Cozy Cloudbeast",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -492,17 +401,7 @@ SMODS.Joker:take_ownership('constellation',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 9, y = 10 },
-		loc_txt = {
-			name = "Akashi",
-			text = {
-				"This fay gains",
-                "{X:mult,C:white} X#1# {} Mult every time",
-                "a {C:planet}Planet{} card is used",
-                "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:purple,s:0.9}Glittering stars",
-				"{C:red,s:0.8}Art by FuzzyRemi!",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -511,16 +410,7 @@ SMODS.Joker:take_ownership('erosion',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 5, y = 13 },
-		loc_txt = {
-			name = "Valyx",
-			text = {
-				"{C:red}+#1#{} Mult for each",
-                "card below {C:attention}#3#{}",
-                "in your full deck",
-                "{C:inactive}(Currently {C:red}+#2#{C:inactive} Mult)",
-				"{C:chips,s:0.9}The Crocodragon's healing power"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -529,15 +419,7 @@ SMODS.Joker:take_ownership('fibonacci',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 1, y = 5 },
-		loc_txt = {
-			name = "Lorcan",
-			text = {
-				"Each played {C:attention}Ace{},",
-				"{C:attention}2{}, {C:attention}3{}, {C:attention}5{}, or {C:attention}8{} gives",
-				"{C:mult}+#1#{} Mult when scored",
-				"{C:green,s:0.9}Gorp!"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -546,16 +428,8 @@ SMODS.Joker:take_ownership('hack',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 5, y = 2 },
-		loc_txt = {
-			name = "Serkular",
-			text = {
-				"Retrigger",
-                "each played",
-                "{C:attention}2{}, {C:attention}3{}, {C:attention}4{}, or {C:attention}5{}",
-				"{C:red,s:0.8}The best jokes around"
-                },
-			},
-		},
+		-- loc_txt in localization file
+	},
 	false -- true = silent | suppresses mod badge
 )
 
@@ -564,15 +438,7 @@ SMODS.Joker:take_ownership('hologram',
 		atlas = atlas.jokers.key,
 		pos = { x = 4, y = 12 },
 		soul_pos = { x = 10, y = 10 },
-		loc_txt = {
-			name = "Lischer Voge",
-			text = {
-				"This bird gains {X:mult,C:white} X#1# {} Mult",
-				"every time a {C:attention}playing card{}",
-				"is added to your deck",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -581,15 +447,7 @@ SMODS.Joker:take_ownership('onyx_agate',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 2, y = 8 },
-		loc_txt = {
-			name = "Rhasakani",
-			text = {
-				"Played cards with",
-                "{C:clubs}Club{} suit give",
-                "{C:mult}+#1#{} Mult when scored",
-				"{C:blue,s:0.9}Shiny~"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -599,15 +457,7 @@ SMODS.Joker:take_ownership('oops',
 		atlas = atlas.jokers.key,
 		pos = { x = 5, y = 6 },
 		soul_pos = { x = 10, y = 3 },
-		loc_txt = {
-			name = "Xenon",
-			text = {
-				"Doubles all {C:attention}listed",
-                "{C:green,E:1,S:1.1}probabilities",
-                "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}2 in 3{C:inactive})",
-				"{C:red,s:0.9}He gave me loaded dice!"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -616,15 +466,7 @@ SMODS.Joker:take_ownership('rocket',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 8, y = 12 },
-		loc_txt = {
-			name = "Einarr",
-			text = {
-				"Earn {C:money}$#1#{} at end of round",
-				"Payout increases by {C:money}$#2#{}",
-				"when {C:attention}Boss Blind{} is defeated",
-				"{C:red,s:0.9}Reach for the stars"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -642,16 +484,7 @@ SMODS.Joker:take_ownership('smeared',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 4, y = 6 },
-		loc_txt = {
-			name = "Smeared Kobold",
-			text = {
-				"{C:hearts}Hearts{} and {C:diamonds}Diamonds",
-				"count as the same suit,",
-				"{C:spades}Spades{} and {C:clubs}Clubs",
-				"count as the same suit",
-				"{C:attention,s:0.8}Art by Boldarts!"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -660,14 +493,7 @@ SMODS.Joker:take_ownership('sock_and_buskin',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 3, y = 1 },
-		loc_txt = {
-			name = "Jaitsu",
-			text = {
-				"Retrigger all",
-				"played {C:attention}face{} cards",
-				"{C:inactive,s:0.9}Jock and Juskin"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -676,17 +502,7 @@ SMODS.Joker:take_ownership('steel_joker',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 7, y = 2 },
-		loc_txt = {
-			name = "Metaflame",
-			text = {
-				"Gives {X:mult,C:white} X#1# {} Mult",
-				"for each {C:attention}Steel Card",
-				"in your {C:attention}full deck",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:planet,s:0.9}Beep",
-				"{C:red,s:0.8}Art by LaserFire!",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -695,15 +511,7 @@ SMODS.Joker:take_ownership('trading',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 9, y = 14 },
-		loc_txt = {
-			name = "Kusarii",
-			text = {
-				"If {C:attention}first discard{} of round",
-				"has only {C:attention}1{} card,",
-				"destroy it and earn {C:money}$#1#",
-				"{C:purple,s:0.8}Art by KusariiBites!",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -712,16 +520,7 @@ SMODS.Joker:take_ownership('vampire',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 2, y = 12 },
-		loc_txt = {
-			name = "Ixen",
-			text = {
-				"This Ibex gains {X:mult,C:white} X#1# {} Mult",
-                "per scoring {C:attention}Enhanced card{} played,",
-                "removes card {C:attention}Enhancement",
-                "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:blue,s:0.9}Purifying flame",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -734,15 +533,7 @@ SMODS.Joker:take_ownership('baron',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 6, y = 12 },
-		loc_txt = {
-			name = "Giga",
-			text = {
-				"Each {C:attention}King{}",
-                "held in hand",
-                "gives {X:mult,C:white} X#1# {} Mult",
-				"{C:blue,s:0.9}Submit to the King's icy glare"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -751,14 +542,7 @@ SMODS.Joker:take_ownership('baseball',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 6, y = 14 },
-		loc_txt = {
-			name = "Fletcher",
-			text = {
-				"{C:green}Uncommon{} Jokers",
-                "each give {X:mult,C:white} X#1# {} Mult",
-				"{C:attention,s:0.9}Stylish noodle"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -767,16 +551,7 @@ SMODS.Joker:take_ownership('campfire',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 5, y = 15 },
-		loc_txt = {
-			name = "Apolar",
-			text = {
-				"This Joker gains {X:mult,C:white}X#1#{} Mult",
-				"for each card {C:attention}sold{}, resets",
-				"when {C:attention}Boss Blind{} is defeated",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:red,s:0.9}A cozy spot to rest"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -785,17 +560,7 @@ SMODS.Joker:take_ownership('obelisk',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 9, y = 12 },
-		loc_txt = {
-			name = "Borruhn",
-			text = {
-				"This Coga gains {X:mult,C:white} X#1# {} Mult",
-				"per {C:attention}consecutive{} hand played",
-				"without playing your",
-				"most played {C:attention}poker hand",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:mult,s:0.7}Tummy :3",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -805,14 +570,7 @@ SMODS.Joker:take_ownership('stuntman',
 		atlas = atlas.jokers.key,
 		pos = { x = 8, y = 6 },
 		soul_pos = { x = 10, y = 2 },
-		loc_txt = {
-			name = "Rider and Ryune",
-			text = {
-				"{C:chips}+#1#{} Chips,",
-                "{C:attention}-#2#{} hand size",
-				"{C:mult,s:0.9}I've got you, little one",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -821,15 +579,7 @@ SMODS.Joker:take_ownership('trio',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 6, y = 4 },
-		loc_txt = {
-			name = "Esker",
-			text = {
-				"{X:mult,C:white} X#1# {} Mult if played",
-				"hand contains",
-				"a {C:attention}#2#",
-				"{C:red,s:0.9}Three eyes grant their power"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -838,17 +588,7 @@ SMODS.Joker:take_ownership('wee',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 10, y = 1 },
-		loc_txt = {
-			name = "Lil Guy",
-			text = {
-				"This lil guy gains",
-				"{C:chips}+#2#{} Chips when each",
-				"played {C:attention}2{} is scored",
-				"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
-				"{C:red,s:0.9}Just a lil guy!",
-				"{C:attention,s:0.8}Art by DaxlMonitor!",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -882,15 +622,7 @@ SMODS.Joker:take_ownership('caino',
 		atlas = atlas.jokers.key,
 		pos = { x = 3, y = 8 },
 		soul_pos = { x = 3, y = 9 },
-		loc_txt = {
-			name = "Kornio",
-			text = {
-				"This dragon gains {X:mult,C:white} X#1# {} Mult",
-				"when a {C:attention}face{} card is destroyed",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:red,s:0.9}Art by RenTradewind!",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
