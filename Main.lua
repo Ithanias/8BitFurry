@@ -414,6 +414,23 @@ SMODS.Joker:take_ownership('splash',
 	false -- true = silent | suppresses mod badge
 )
 
+SMODS.Joker:take_ownership('riff_raff',
+	{
+		atlas = atlas.jokers.key,
+		pos = { x = 1, y = 12 },
+		loc_txt = {
+			name = "Zard",
+			text = {
+				"When {C:attention}Blind{} is selected,",
+                "create {C:attention}#1# {C:blue}Common{C:attention} Jokers",
+                "{C:inactive}(Must have room)",
+				"{C:blue,s:0.9}Lifetime supply of kobolds",
+			},
+		},
+	},
+	false -- true = silent | suppresses mod badge
+)
+
 --#endregion
 --#region ==-Uncommon ===
 
@@ -719,7 +736,7 @@ SMODS.Joker:take_ownership('vampire',
 )
 
 --endregion
---region ===Rares===
+--region ===Rare===
 
 
 SMODS.Joker:take_ownership('baron',
@@ -866,40 +883,8 @@ SMODS.DrawStep:take_ownership('floating_sprite',
 )
 
 --#endregion
---#region =====What?=====
---SMODS.Joker {
---	key = 'The_Start',
---	loc_txt = {
---		name = 'Hastagazpacho',
---		text = {
---			"{s:1.1}My role is to carry part of the message.",
---			"{s:1.1}Follow the sound of my music",
---			"{s:1.1}Find {C:red}Chris Rawlings{}, he can",
---			"{s:1.1}tell you the {C:red}12-digit code{}",
---			"DM the code to Ithanias!"
---
---		}
---	},
---	config = { extra = { chips = 1 } },
---	loc_vars = function(self, info_queue, card)
---		return { vars = { card.ability.extra.chips } }
---	end,
---	rarity = 4,
---	atlas = atlas.jokers.key,
---	pos = { x = 11, y = 4 },
---	cost = 0,
---	calculate = function(self, card, context)
---		if context.joker_main then
---			return {
---				mult_mod = card.ability.extra.chips,
---
---				message = localize { type = 'variable', key = 'a_chips', vars = { card.ability.extra.chips } }
---			}
---		end
---	end
---}
+--#region =====Legendary=====
 
---#endregion
 
 SMODS.Joker:take_ownership('caino',
 	{
