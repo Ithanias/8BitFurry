@@ -633,16 +633,7 @@ SMODS.Joker:take_ownership('seeing_double',
 	{
 		atlas = atlas.jokers.key,
 		pos = { x = 4, y = 4 },
-		loc_txt = {
-			name = "Malthy",
-			text = {
-				"{X:mult,C:white} X#1# {} Mult if played",
-                "hand has a scoring",
-                "{C:clubs}Club{} card and a scoring",
-                "card of any other {C:attention}suit",
-				"{C:blue,s:0.8}Different, yet the same"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
