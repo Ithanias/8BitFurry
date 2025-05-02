@@ -31,6 +31,58 @@ local function make_atlas(key, path)
 	}
 end
 
+---Replaces the atlas for all `obj_keys` in `smods_obj` with `atlas_key` by calling `take_ownership()`
+---This is roughly equivalent to repeatedly calling:
+---```lua
+---smods_obj:take_ownership(obj_keys[i],
+---  {
+---    atlas = atlas_key
+---  },
+---  silent
+---)
+---```
+---Each obj_key item may be a string, or a key-table entry with additional properties.
+---Example:
+---```lua
+----- atlas.jokers.key refers to an atlas key
+---replace_atlas_for(SMODS.Joker, atlas.jokers.key, {
+---  -- Simple atlas replacement
+---  "blue_joker",
+---  -- Also replaces pos
+---  wee = { pos = { x = 10, y = 1 } },
+---  -- You can also specify an arbitrary string key with ["..."]
+---  ["hologram"] = { soul_pos = { x = 10, y = 10 } },
+---})
+---```
+---@param smods_obj any Needs a valid take_ownership() function
+---@param atlas_key string
+---@param obj_keys table<string, (string|table)> A list of object keys to replace. Each item may be a simple string like in an array, or a key with a table of additional properties to replace.
+---@param silent boolean?
+local function replace_atlas_for(smods_obj, atlas_key, obj_keys, silent)
+	silent = silent or false
+	log.debug(("Replacing atlas for %d objects with \"%s\""):format(#obj_keys, atlas_key))
+	for k, v in pairs(obj_keys) do
+		local obj_key
+		local replace_table
+
+		if type(k) == "number" then
+			-- Assumed to be an array item - the value is the object key
+			obj_key = v
+			replace_table = {}
+		else
+			-- Table item - the key is the object key, the value is a list of additional properties
+			obj_key = k
+			replace_table = v
+		end
+
+		replace_table.atlas = atlas_key
+
+		log.debug("\t" .. obj_key)
+		local orig_o = smods_obj:take_ownership(obj_key, replace_table, silent)
+		log.debug("\tNew object: \n" .. inspectDepth(orig_o, 2, 2))
+	end
+end
+
 ---@enum rankName
 local RANK = {
 	["2"] = "2",
@@ -292,306 +344,50 @@ make_skin(
 --#endregion
 
 --#region ===== Jokers =====
---#region === Common ===
 
-
-SMODS.Joker:take_ownership('blue_joker',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 7, y = 10 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('cavendish',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 11 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('green_joker',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 2, y = 11 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('gros_michel',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 7, y = 6 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('ice_cream',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 4, y = 10 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('joker',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 0, y = 0 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('splash',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 6, y = 10 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('riff_raff',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 1, y = 12 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
---#endregion
---#region ==-Uncommon ===
-
-SMODS.Joker:take_ownership('bootstraps',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 9, y = 8 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('ceremonial',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 5 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('cloud_9',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 7, y = 12 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('constellation',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 9, y = 10 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('erosion',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 13 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('fibonacci',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 1, y = 5 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('hack',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 2 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('hologram',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 4, y = 12 },
-		soul_pos = { x = 10, y = 10 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('onyx_agate',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 2, y = 8 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('oops',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 6 },
-		soul_pos = { x = 10, y = 3 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('rocket',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 8, y = 12 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('seeing_double',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 4, y = 4 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('smeared',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 4, y = 6 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('sock_and_buskin',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 3, y = 1 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('steel_joker',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 7, y = 2 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('trading',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 9, y = 14 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('vampire',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 2, y = 12 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
---endregion
---region ===Rare===
-
-
-SMODS.Joker:take_ownership('baron',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 6, y = 12 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('baseball',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 6, y = 14 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('campfire',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 15 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('obelisk',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 9, y = 12 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('stuntman',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 8, y = 6 },
-		soul_pos = { x = 10, y = 2 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('trio',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 6, y = 4 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('wee',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 10, y = 1 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
+replace_atlas_for(SMODS.Joker, atlas.jokers.key, {
+	--#region === Common ===
+	"blue_joker",
+	"cavendish",
+	"green_joker",
+	"gros_michel",
+	"ice_cream",
+	"joker",
+	"splash",
+	"riff_raff",
+	--#endregion
+	--#region ==-Uncommon ===
+	"bootstraps",
+	"ceremonial",
+	"cloud_9",
+	"constellation",
+	"erosion",
+	"fibonacci",
+	"hack",
+	hologram = { soul_pos = { x = 10, y = 10 } },
+	"onyx_agate",
+	oops = { soul_pos = { x = 10, y = 3 } },
+	"rocket",
+	"seeing_double",
+	"smeared",
+	"sock_and_buskin",
+	"steel_joker",
+	"trading",
+	"vampire",
+	--endregion
+	--region ===Rare===
+	"baron",
+	"baseball",
+	"campfire",
+	"obelisk",
+	stuntman = { soul_pos = { x = 10, y = 2 } },
+	"trio",
+	wee = { pos = { x = 10, y = 1 } },
+	--#endregion
+	--#region =====Legendary=====
+	"caino",
+	--#endregion
+})
 
 -- This removes the glitch effects from Hologram
 ---@type function
@@ -613,21 +409,6 @@ SMODS.DrawStep:take_ownership('floating_sprite',
 	}, true
 )
 
---#endregion
---#region =====Legendary=====
-
-
-SMODS.Joker:take_ownership('caino',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 3, y = 8 },
-		soul_pos = { x = 3, y = 9 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
---#endregion
 
 --#region ===== Consumables =====
 
