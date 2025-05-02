@@ -413,83 +413,20 @@ SMODS.DrawStep:take_ownership('floating_sprite',
 
 --#region ===== Consumables =====
 
---#region ===== Tarots =====
-
-SMODS.Consumable:take_ownership('chariot',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 7, y = 0 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Consumable:take_ownership('fool',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 0, y = 0 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Consumable:take_ownership('hanged_man',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 2, y = 1 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Consumable:take_ownership('high_priestess',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 2, y = 0 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-
-SMODS.Consumable:take_ownership('tower',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 6, y = 1 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
---#endregion
---#region ===== Spectrals =====
-SMODS.Consumable:take_ownership('immolate',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 9, y = 4 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-
-SMODS.Consumable:take_ownership('medium',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 4, y = 5 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Consumable:take_ownership('soul',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 2, y = 2 },
-		-- soul_pos = { x = 6, y = 5 }, -- this would have worked if the game didn't use G.shared_soul for just this one card for some reason
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
+replace_atlas_for(SMODS.Consumable, atlas.consumables.key, {
+	--#region ===== Tarots =====
+	"chariot",
+	"fool",
+	"hanged_man",
+	"high_priestess",
+	"tower",
+	--#endregion
+	--#region ===== Spectrals =====
+	"immolate",
+	"medium",
+	"soul",
+	--#endregion
+})
 
 -- Override The Soul floating sprite, since it's not actually a floating_sprite for some reason (and so it doesn't use soul_pos)
 -- This needs to be called after our atlases are loaded, hence the event manager
@@ -509,26 +446,15 @@ G.E_MANAGER:add_event(Event({
 }))
 
 --#endregion
---#endregion
 
 --#region ===== Editions/Seals/Extra =====
 
-SMODS.Seal:take_ownership('Purple',
-	{
-		atlas = atlas.enhancers.key,
-		pos = { x = 4, y = 4 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
+replace_atlas_for(SMODS.Seal, atlas.enhancers.key, {
+	"Purple",
+})
 
-SMODS.Enhancement:take_ownership('stone',
-	{
-		atlas = atlas.enhancers.key,
-		pos = { x = 5, y = 0 },
-		-- loc_txt in localization file
-	},
-	false -- true = silent | suppresses mod badge
-)
+replace_atlas_for(SMODS.Enhancement, atlas.enhancers.key, {
+	"stone",
+})
 
 --endregion
