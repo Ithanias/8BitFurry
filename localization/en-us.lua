@@ -312,8 +312,17 @@ return {
                 },
             },
         },
+        Enhanced = {
+            m_stone = {
+                name = "Obscured Card",
+                text = {
+                    "{C:chips}+#1#{} Chips",
+                    "no rank or suit",
+                },
+            }
+        },
         Tarot = {
-            j_chariot = {
+            c_chariot = {
                 name = "Frank",
                 text = {
                     "Enhances {C:attention}#2#{} selected",
@@ -321,7 +330,16 @@ return {
                     "{C:attention}#1#",
                 },
             },
-            j_hanged_man = {
+            c_fool = {
+                name = "Foolsnapz",
+                text = {
+                    "Creates the last",
+                    "{C:tarot}Tarot{} or {C:planet}Planet{} card",
+                    "used during this run",
+                    "{s:0.9,C:tarot}Just one!",
+                },
+            },
+            c_hanged_man = {
                 name = "Varghus",
                 text = {
                     "Destroys up to",
@@ -329,7 +347,7 @@ return {
                     "{C:black,s:0.9}Lost in black wings"
                 },
             },
-            j_high_priestess = {
+            c_high_priestess = {
                 name = "Echo",
                 text = {
                     "Creates up to {C:attention}#1#",
@@ -338,7 +356,7 @@ return {
                     "{C:blue,s:0.9}Celestial flames"
                 },
             },
-            j_tower = {
+            c_tower = {
                 name = "Degyn",
                 text = {
                     "Enhances {C:attention}#2#{} selected",

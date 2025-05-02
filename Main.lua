@@ -658,15 +658,7 @@ SMODS.Consumable:take_ownership('fool',
     {
         atlas = atlas.consumables.key,
         pos = { x = 0, y = 0 },
-        loc_txt = {
-            name = "Foolsnapz",
-            text = {
-                "Creates the last",
-                "{C:tarot}Tarot{} or {C:planet}Planet{} card",
-                "used during this run",
-                "{s:0.9,C:tarot}Just one!",
-            },
-        },
+		-- loc_txt in localization file
         loc_vars = function(self, info_queue, card)
             -- Copied from the base game
             local fool_c = G.GAME.last_tarot_planet and G.P_CENTERS[G.GAME.last_tarot_planet] or nil
@@ -816,13 +808,7 @@ SMODS.Enhancement:take_ownership('stone',
 	{
 		atlas = atlas.enhancers.key,
 		pos = { x = 5, y = 0 },
-		loc_txt = {
-			name = "Obscured Card",
-			text = {
-				"{C:chips}+#1#{} Chips",
-                "no rank or suit",
-			},
-		},
+		-- loc_txt in localization file
 		loc_vars = function(self, info_queue, card)
 			return { vars = { card.ability.bonus } }
 		end,
