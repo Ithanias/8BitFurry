@@ -325,9 +325,9 @@ return {
             c_chariot = {
                 name = "Frank",
                 text = {
-                    "Enhances {C:attention}#2#{} selected",
+                    "Enhances {C:attention}#1#{} selected",
                     "card into a",
-                    "{C:attention}#1#",
+                    "{C:attention}#2#",
                 },
             },
             c_fool = {

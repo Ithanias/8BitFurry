@@ -639,17 +639,6 @@ SMODS.Consumable:take_ownership('chariot',
 		atlas = atlas.consumables.key,
 		pos = { x = 7, y = 0 },
 		-- loc_txt in localization file
-		loc_vars = function(self, info_queue, card)
-			info_queue[#info_queue+1] = G.P_CENTERS.m_steel
-			return {
-				vars = {
-					-- Fun fact! the game *specifically* localizes the card name for tarot cards (etc.) so we gotta do it here too!
-					-- localize() is a base-game function from misc_functions
-					localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv },
-					card.ability.max_highlighted
-				}
-			}
-		end,
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -699,9 +688,6 @@ SMODS.Consumable:take_ownership('hanged_man',
 		atlas = atlas.consumables.key,
 		pos = { x = 2, y = 1 },
 		-- loc_txt in localization file
-		loc_vars = function(self, info_queue, card)
-			return { vars = { card.ability.max_highlighted } }
-		end,
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -711,9 +697,6 @@ SMODS.Consumable:take_ownership('high_priestess',
 		atlas = atlas.consumables.key,
 		pos = { x = 2, y = 0 },
 		-- loc_txt in localization file
-		loc_vars = function(self, info_queue, card)
-			return { vars = { card.ability.planets } }
-		end,
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -724,15 +707,6 @@ SMODS.Consumable:take_ownership('tower',
 		atlas = atlas.consumables.key,
 		pos = { x = 6, y = 1 },
 		-- loc_txt in localization file
-		loc_vars = function(self, info_queue, card)
-			info_queue[#info_queue+1] = G.P_CENTERS.m_stone
-			return {
-				vars = {
-					localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv },
-					card.ability.max_highlighted
-				}
-			}
-		end,
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -743,9 +717,6 @@ SMODS.Consumable:take_ownership('immolate',
 		atlas = atlas.consumables.key,
 		pos = { x = 9, y = 4 },
 		-- loc_txt in localization file
-		loc_vars = function(self, info_queue, card)
-			return { vars = { card.ability.extra.destroy, card.ability.extra.dollars } }
-		end,
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -756,9 +727,6 @@ SMODS.Consumable:take_ownership('medium',
 		atlas = atlas.consumables.key,
 		pos = { x = 4, y = 5 },
 		-- loc_txt in localization file
-		loc_vars = function (self, info_queue, card)
-			info_queue[#info_queue+1] = {key = 'purple_seal', set = 'Other'}
-		end
 	},
 	false -- true = silent | suppresses mod badge
 )
