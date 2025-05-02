@@ -311,6 +311,78 @@ return {
                     "{C:red,s:0.9}Art by RenTradewind!",
                 },
             },
+        },
+        Tarot = {
+            j_chariot = {
+                name = "Frank",
+                text = {
+                    "Enhances {C:attention}#2#{} selected",
+                    "card into a",
+                    "{C:attention}#1#",
+                },
+            },
+            j_hanged_man = {
+                name = "Varghus",
+                text = {
+                    "Destroys up to",
+                    "{C:attention}#1#{} selected cards",
+                    "{C:black,s:0.9}Lost in black wings"
+                },
+            },
+            j_high_priestess = {
+                name = "Echo",
+                text = {
+                    "Creates up to {C:attention}#1#",
+                    "random {C:planet}Planet{} cards",
+                    "{C:inactive}(Must have room)",
+                    "{C:blue,s:0.9}Celestial flames"
+                },
+            },
+            j_tower = {
+                name = "Degyn",
+                text = {
+                    "Enhances {C:attention}#2#{} selected",
+                    "card into an",
+                    "{C:attention}#1#",
+                },
+            },
+        },
+        Spectral = {
+            c_soul = {
+                name = "Oh Snap(z)!",
+                text = {
+                    "{C:legendary,E:1,s:0.8}A rat!{}",
+                    "Creates a {C:legendary}Legendary{} Joker",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+            c_medium = {
+                name = "Void Gift",
+                text = {
+                    "One card receives the",
+                    "{C:purple}Reaper's Mark{}",
+                },
+            },
+            c_immolate = {
+                name = "Immolate",
+                text = {
+                    "Destroys {C:attention}#1#{} random",
+                    "cards in hand,",
+                    "gain {C:money}$#2#",
+                    "{C:inactive,s:0.9}Dragon insurance pays off"
+                },
+            },
+        },
+        Other = {
+            purple_seal = {
+                name = "Reaper's Mark",
+                text = {
+                    "Creates a {C:tarot}Tarot{} card",
+                    "when {C:attention}discarded",
+                    "{C:inactive}(Must have room)",
+                    "{C:tarot,s:0.9}A gift from the Void",
+                },
+            },
         }
     }
 }

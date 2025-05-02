@@ -638,14 +638,7 @@ SMODS.Consumable:take_ownership('chariot',
 	{
 		atlas = atlas.consumables.key,
 		pos = { x = 7, y = 0 },
-		loc_txt = {
-			name = "Frank",
-			text = {
-				"Enhances {C:attention}#2#{} selected",
-				"card into a",
-				"{C:attention}#1#",
-			},
-		},
+		-- loc_txt in localization file
 		loc_vars = function(self, info_queue, card)
 			info_queue[#info_queue+1] = G.P_CENTERS.m_steel
 			return {
@@ -713,14 +706,7 @@ SMODS.Consumable:take_ownership('hanged_man',
 	{
 		atlas = atlas.consumables.key,
 		pos = { x = 2, y = 1 },
-		loc_txt = {
-			name = "Varghus",
-			text = {
-				"Destroys up to",
-                "{C:attention}#1#{} selected cards",
-				"{C:black,s:0.9}Lost in black wings"
-			},
-		},
+		-- loc_txt in localization file
 		loc_vars = function(self, info_queue, card)
 			return { vars = { card.ability.max_highlighted } }
 		end,
@@ -732,15 +718,7 @@ SMODS.Consumable:take_ownership('high_priestess',
 	{
 		atlas = atlas.consumables.key,
 		pos = { x = 2, y = 0 },
-		loc_txt = {
-			name = "Echo",
-			text = {
-				"Creates up to {C:attention}#1#",
-				"random {C:planet}Planet{} cards",
-				"{C:inactive}(Must have room)",
-				"{C:blue,s:0.9}Celestial flames"
-			},
-		},
+		-- loc_txt in localization file
 		loc_vars = function(self, info_queue, card)
 			return { vars = { card.ability.planets } }
 		end,
@@ -753,14 +731,7 @@ SMODS.Consumable:take_ownership('tower',
 	{
 		atlas = atlas.consumables.key,
 		pos = { x = 6, y = 1 },
-		loc_txt = {
-			name = "Degyn",
-			text = {
-				"Enhances {C:attention}#2#{} selected",
-				"card into an",
-				"{C:attention}#1#",
-			},
-		},
+		-- loc_txt in localization file
 		loc_vars = function(self, info_queue, card)
 			info_queue[#info_queue+1] = G.P_CENTERS.m_stone
 			return {
@@ -779,15 +750,7 @@ SMODS.Consumable:take_ownership('immolate',
 	{
 		atlas = atlas.consumables.key,
 		pos = { x = 9, y = 4 },
-		loc_txt = {
-			name = "Immolate",
-			text = {
-				"Destroys {C:attention}#1#{} random",
-				"cards in hand,",
-				"gain {C:money}$#2#",
-				"{C:inactive,s:0.9}Dragon insurance pays off"
-			},
-		},
+		-- loc_txt in localization file
 		loc_vars = function(self, info_queue, card)
 			return { vars = { card.ability.extra.destroy, card.ability.extra.dollars } }
 		end,
@@ -800,13 +763,7 @@ SMODS.Consumable:take_ownership('medium',
 	{
 		atlas = atlas.consumables.key,
 		pos = { x = 4, y = 5 },
-		loc_txt = {
-			name = "Void Gift",
-			text = {
-				"One card receives the",
-				"{C:purple}Reaper's Mark{}",
-			},
-		},
+		-- loc_txt in localization file
 		loc_vars = function (self, info_queue, card)
 			info_queue[#info_queue+1] = {key = 'purple_seal', set = 'Other'}
 		end
@@ -819,13 +776,7 @@ SMODS.Consumable:take_ownership('soul',
 		atlas = atlas.consumables.key,
 		pos = { x = 2, y = 2 },
 		-- soul_pos = { x = 6, y = 5 }, -- this would have worked if the game didn't use G.shared_soul for just this one card for some reason
-		loc_txt = {
-			name = "Oh Snap(z)!",
-			text = {
-				"{C:legendary,E:1,s:0.8}A rat!{}",
-				"Creates a {C:legendary}Legendary{} Joker"
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
@@ -856,15 +807,7 @@ SMODS.Seal:take_ownership('Purple',
 	{
 		atlas = atlas.enhancers.key,
 		pos = { x = 4, y = 4 },
-		loc_txt = {
-			name = "Reaper's Mark",
-			text = {
-				"Creates a {C:tarot}Tarot{} card",
-				"when {C:attention}discarded",
-				"{C:inactive}(Must have room)",
-				"{C:tarot,s:0.9}A gift from the Void",
-			},
-		},
+		-- loc_txt in localization file
 	},
 	false -- true = silent | suppresses mod badge
 )
