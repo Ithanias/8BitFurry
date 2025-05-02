@@ -31,6 +31,58 @@ local function make_atlas(key, path)
 	}
 end
 
+---Replaces the atlas for all `obj_keys` in `smods_obj` with `atlas_key` by calling `take_ownership()`
+---This is roughly equivalent to repeatedly calling:
+---```lua
+---smods_obj:take_ownership(obj_keys[i],
+---  {
+---    atlas = atlas_key
+---  },
+---  silent
+---)
+---```
+---Each obj_key item may be a string, or a key-table entry with additional properties.
+---Example:
+---```lua
+----- atlas.jokers.key refers to an atlas key
+---replace_atlas_for(SMODS.Joker, atlas.jokers.key, {
+---  -- Simple atlas replacement
+---  "blue_joker",
+---  -- Also replaces pos
+---  wee = { pos = { x = 10, y = 1 } },
+---  -- You can also specify an arbitrary string key with ["..."]
+---  ["hologram"] = { soul_pos = { x = 10, y = 10 } },
+---})
+---```
+---@param smods_obj any Needs a valid take_ownership() function
+---@param atlas_key string
+---@param obj_keys table<string, (string|table)> A list of object keys to replace. Each item may be a simple string like in an array, or a key with a table of additional properties to replace.
+---@param silent boolean?
+local function replace_atlas_for(smods_obj, atlas_key, obj_keys, silent)
+	silent = silent or false
+	log.debug(("Replacing atlas for %d objects with \"%s\""):format(#obj_keys, atlas_key))
+	for k, v in pairs(obj_keys) do
+		local obj_key
+		local replace_table
+
+		if type(k) == "number" then
+			-- Assumed to be an array item - the value is the object key
+			obj_key = v
+			replace_table = {}
+		else
+			-- Table item - the key is the object key, the value is a list of additional properties
+			obj_key = k
+			replace_table = v
+		end
+
+		replace_table.atlas = atlas_key
+
+		log.debug("\t" .. obj_key)
+		local orig_o = smods_obj:take_ownership(obj_key, replace_table, silent)
+		log.debug("\tNew object: \n" .. inspectDepth(orig_o, 2, 2))
+	end
+end
+
 ---@enum rankName
 local RANK = {
 	["2"] = "2",
@@ -292,575 +344,50 @@ make_skin(
 --#endregion
 
 --#region ===== Jokers =====
---#region === Common ===
 
-
-SMODS.Joker:take_ownership('blue_joker',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 7, y = 10 },
-		loc_txt = {
-			name = "Blue",
-			text = {
-				"{C:chips}+#1#{} Chips for each",
-				"remaining card in {C:attention}deck",
-				"{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
-				"{C:chips,s:0.9}A noble Sea Slug"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('cavendish',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 11 },
-		loc_txt = {
-			name = "Banangry",
-			text = {
-				"{X:mult,C:white} X#1# {} Mult",
-                "{C:green}#2# in #3#{} chance this",
-                "card is destroyed",
-                "at end of round",
-				"{C:mult,s:0.9}Now you've upset him >:c",
-				"{C:attention,s:0.8}Art by FuzzyRemi!",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('green_joker',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 2, y = 11 },
-		loc_txt = {
-			name = "Green Joker",
-			text = {
-				"{C:mult}+#1#{} Mult per hand played",
-                "{C:mult}-#2#{} Mult per discard",
-                "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
-				--"{C:blue,s:1.1}discord.gg/RXqc9wxWHs",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('gros_michel',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 7, y = 6 },
-		loc_txt = {
-			name = "Banana",
-			text = {
-				"{C:mult}+#1#{} Mult",
-                "{C:green}#2# in #3#{} chance this",
-                "card is destroyed",
-                "at end of round",
-				"{C:blue,s:0.9}:P",
-				"{C:attention,s:0.8}Art by FuzzyRemi!",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('ice_cream',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 4, y = 10 },
-		loc_txt = {
-			name = "Bedi",
-			text = {
-				"{C:chips}+#1#{} Chips",
-				"{C:chips}-#2#{} Chips for",
-				"every hand played",
-				"{C:green,s:0.9}Yap!"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('joker',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 0, y = 0 },
-		loc_txt = {
-			name = "Jimbo",
-			text = {
-				"{C:red,s:1.1}+#1#{} Mult",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('splash',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 6, y = 10 },
-		loc_txt = {
-			name = "Kink",
-			text = {
-				"Every {C:attention}played card",
-                "counts in scoring",
-				"{C:blue,s:0.9}Big fish!",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('riff_raff',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 1, y = 12 },
-		loc_txt = {
-			name = "Zard",
-			text = {
-				"When {C:attention}Blind{} is selected,",
-                "create {C:attention}#1# {C:blue}Common{C:attention} Jokers",
-                "{C:inactive}(Must have room)",
-				"{C:blue,s:0.9}Lifetime supply of kobolds",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
---#endregion
---#region ==-Uncommon ===
-
-SMODS.Joker:take_ownership('bootstraps',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 9, y = 8 },
-		loc_txt = {
-			name = "Socks",
-			text = {
-				"{C:mult}+#1#{} Mult for every",
-                "{C:money}$#2#{} you have",
-                "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
-				"{C:attention,s:0.8}Pick yourself up by your... socks",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('ceremonial',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 5 },
-		loc_txt = {
-			name = "Lagos",
-			text = {
-				"When {C:attention}Blind{} is selected,",
-				"destroy Joker to the right",
-				"and permanently add {C:attention}double",
-				"its sell value to this {C:red}Mult",
-				"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
-				"{C:purple,s:0.8}Always hungry...",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('cloud_9',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 7, y = 12 },
-		loc_txt = {
-			name = "Stratus",
-			text = {
-				"Earn {C:money}$#1#{} for each",
-                "{C:attention}9{} in your {C:attention}full deck",
-                "at end of round",
-                "{C:inactive}(Currently {C:money}$#2#{}{C:inactive})",
-				"{C:blue,s:0.8}Cozy Cloudbeast",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('constellation',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 9, y = 10 },
-		loc_txt = {
-			name = "Akashi",
-			text = {
-				"This fay gains",
-                "{X:mult,C:white} X#1# {} Mult every time",
-                "a {C:planet}Planet{} card is used",
-                "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:purple,s:0.9}Glittering stars",
-				"{C:red,s:0.8}Art by FuzzyRemi!",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('erosion',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 13 },
-		loc_txt = {
-			name = "Valyx",
-			text = {
-				"{C:red}+#1#{} Mult for each",
-                "card below {C:attention}#3#{}",
-                "in your full deck",
-                "{C:inactive}(Currently {C:red}+#2#{C:inactive} Mult)",
-				"{C:chips,s:0.9}The Crocodragon's healing power"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('fibonacci',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 1, y = 5 },
-		loc_txt = {
-			name = "Lorcan",
-			text = {
-				"Each played {C:attention}Ace{},",
-				"{C:attention}2{}, {C:attention}3{}, {C:attention}5{}, or {C:attention}8{} gives",
-				"{C:mult}+#1#{} Mult when scored",
-				"{C:green,s:0.9}Gorp!"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('hack',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 2 },
-		loc_txt = {
-			name = "Serkular",
-			text = {
-				"Retrigger",
-                "each played",
-                "{C:attention}2{}, {C:attention}3{}, {C:attention}4{}, or {C:attention}5{}",
-				"{C:red,s:0.8}The best jokes around"
-                },
-			},
-		},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('hologram',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 4, y = 12 },
-		soul_pos = { x = 10, y = 10 },
-		loc_txt = {
-			name = "Lischer Voge",
-			text = {
-				"This bird gains {X:mult,C:white} X#1# {} Mult",
-				"every time a {C:attention}playing card{}",
-				"is added to your deck",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('onyx_agate',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 2, y = 8 },
-		loc_txt = {
-			name = "Rhasakani",
-			text = {
-				"Played cards with",
-                "{C:clubs}Club{} suit give",
-                "{C:mult}+#1#{} Mult when scored",
-				"{C:blue,s:0.9}Shiny~"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('oops',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 6 },
-		soul_pos = { x = 10, y = 3 },
-		loc_txt = {
-			name = "Xenon",
-			text = {
-				"Doubles all {C:attention}listed",
-                "{C:green,E:1,S:1.1}probabilities",
-                "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}2 in 3{C:inactive})",
-				"{C:red,s:0.9}He gave me loaded dice!"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('rocket',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 8, y = 12 },
-		loc_txt = {
-			name = "Einarr",
-			text = {
-				"Earn {C:money}$#1#{} at end of round",
-				"Payout increases by {C:money}$#2#{}",
-				"when {C:attention}Boss Blind{} is defeated",
-				"{C:red,s:0.9}Reach for the stars"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('seeing_double',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 4, y = 4 },
-		loc_txt = {
-			name = "Malthy",
-			text = {
-				"{X:mult,C:white} X#1# {} Mult if played",
-                "hand has a scoring",
-                "{C:clubs}Club{} card and a scoring",
-                "card of any other {C:attention}suit",
-				"{C:blue,s:0.8}Different, yet the same"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('smeared',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 4, y = 6 },
-		loc_txt = {
-			name = "Smeared Kobold",
-			text = {
-				"{C:hearts}Hearts{} and {C:diamonds}Diamonds",
-				"count as the same suit,",
-				"{C:spades}Spades{} and {C:clubs}Clubs",
-				"count as the same suit",
-				"{C:attention,s:0.8}Art by Boldarts!"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('sock_and_buskin',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 3, y = 1 },
-		loc_txt = {
-			name = "Jaitsu",
-			text = {
-				"Retrigger all",
-				"played {C:attention}face{} cards",
-				"{C:inactive,s:0.9}Jock and Juskin"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('steel_joker',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 7, y = 2 },
-		loc_txt = {
-			name = "Metaflame",
-			text = {
-				"Gives {X:mult,C:white} X#1# {} Mult",
-				"for each {C:attention}Steel Card",
-				"in your {C:attention}full deck",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:planet,s:0.9}Beep",
-				"{C:red,s:0.8}Art by LaserFire!",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('trading',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 9, y = 14 },
-		loc_txt = {
-			name = "Kusarii",
-			text = {
-				"If {C:attention}first discard{} of round",
-				"has only {C:attention}1{} card,",
-				"destroy it and earn {C:money}$#1#",
-				"{C:purple,s:0.8}Art by KusariiBites!",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('vampire',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 2, y = 12 },
-		loc_txt = {
-			name = "Ixen",
-			text = {
-				"This Ibex gains {X:mult,C:white} X#1# {} Mult",
-                "per scoring {C:attention}Enhanced card{} played,",
-                "removes card {C:attention}Enhancement",
-                "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:blue,s:0.9}Purifying flame",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
---endregion
---region ===Rare===
-
-
-SMODS.Joker:take_ownership('baron',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 6, y = 12 },
-		loc_txt = {
-			name = "Giga",
-			text = {
-				"Each {C:attention}King{}",
-                "held in hand",
-                "gives {X:mult,C:white} X#1# {} Mult",
-				"{C:blue,s:0.9}Submit to the King's icy glare"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('baseball',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 6, y = 14 },
-		loc_txt = {
-			name = "Fletcher",
-			text = {
-				"{C:green}Uncommon{} Jokers",
-                "each give {X:mult,C:white} X#1# {} Mult",
-				"{C:attention,s:0.9}Stylish noodle"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('campfire',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 5, y = 15 },
-		loc_txt = {
-			name = "Apolar",
-			text = {
-				"This Joker gains {X:mult,C:white}X#1#{} Mult",
-				"for each card {C:attention}sold{}, resets",
-				"when {C:attention}Boss Blind{} is defeated",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:red,s:0.9}A cozy spot to rest"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('obelisk',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 9, y = 12 },
-		loc_txt = {
-			name = "Borruhn",
-			text = {
-				"This Coga gains {X:mult,C:white} X#1# {} Mult",
-				"per {C:attention}consecutive{} hand played",
-				"without playing your",
-				"most played {C:attention}poker hand",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:mult,s:0.7}Tummy :3",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('stuntman',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 8, y = 6 },
-		soul_pos = { x = 10, y = 2 },
-		loc_txt = {
-			name = "Rider and Ryune",
-			text = {
-				"{C:chips}+#1#{} Chips,",
-                "{C:attention}-#2#{} hand size",
-				"{C:mult,s:0.9}I've got you, little one",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('trio',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 6, y = 4 },
-		loc_txt = {
-			name = "Esker",
-			text = {
-				"{X:mult,C:white} X#1# {} Mult if played",
-				"hand contains",
-				"a {C:attention}#2#",
-				"{C:red,s:0.9}Three eyes grant their power"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Joker:take_ownership('wee',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 10, y = 1 },
-		loc_txt = {
-			name = "Lil Guy",
-			text = {
-				"This lil guy gains",
-				"{C:chips}+#2#{} Chips when each",
-				"played {C:attention}2{} is scored",
-				"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
-				"{C:red,s:0.9}Just a lil guy!",
-				"{C:attention,s:0.8}Art by DaxlMonitor!",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
+replace_atlas_for(SMODS.Joker, atlas.jokers.key, {
+	--#region === Common ===
+	"blue_joker",
+	"cavendish",
+	"green_joker",
+	"gros_michel",
+	"ice_cream",
+	"joker",
+	"splash",
+	"riff_raff",
+	--#endregion
+	--#region ==-Uncommon ===
+	"bootstraps",
+	"ceremonial",
+	"cloud_9",
+	"constellation",
+	"erosion",
+	"fibonacci",
+	"hack",
+	hologram = { soul_pos = { x = 10, y = 10 } },
+	"onyx_agate",
+	oops = { soul_pos = { x = 10, y = 3 } },
+	"rocket",
+	"seeing_double",
+	"smeared",
+	"sock_and_buskin",
+	"steel_joker",
+	"trading",
+	"vampire",
+	--endregion
+	--region ===Rare===
+	"baron",
+	"baseball",
+	"campfire",
+	"obelisk",
+	stuntman = { soul_pos = { x = 10, y = 2 } },
+	"trio",
+	wee = { pos = { x = 10, y = 1 } },
+	--#endregion
+	--#region =====Legendary=====
+	"caino",
+	--#endregion
+})
 
 -- This removes the glitch effects from Hologram
 ---@type function
@@ -883,229 +410,23 @@ SMODS.DrawStep:take_ownership('floating_sprite',
 )
 
 --#endregion
---#region =====Legendary=====
-
-
-SMODS.Joker:take_ownership('caino',
-	{
-		atlas = atlas.jokers.key,
-		pos = { x = 3, y = 8 },
-		soul_pos = { x = 3, y = 9 },
-		loc_txt = {
-			name = "Kornio",
-			text = {
-				"This dragon gains {X:mult,C:white} X#1# {} Mult",
-				"when a {C:attention}face{} card is destroyed",
-				"{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-				"{C:red,s:0.9}Art by RenTradewind!",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
-
---#endregion
 
 --#region ===== Consumables =====
 
---#region ===== Tarots =====
---For all consumables, redefine loc_vars and provide base game variables again
-
-SMODS.Consumable:take_ownership('chariot',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 7, y = 0 },
-		loc_txt = {
-			name = "Frank",
-			text = {
-				"Enhances {C:attention}#2#{} selected",
-				"card into a",
-				"{C:attention}#1#",
-			},
-		},
-		loc_vars = function(self, info_queue, card)
-			info_queue[#info_queue+1] = G.P_CENTERS.m_steel
-			return {
-				vars = {
-					-- Fun fact! the game *specifically* localizes the card name for tarot cards (etc.) so we gotta do it here too!
-					-- localize() is a base-game function from misc_functions
-					localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv },
-					card.ability.max_highlighted
-				}
-			}
-		end,
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Consumable:take_ownership('fool',
-    {
-        atlas = atlas.consumables.key,
-        pos = { x = 0, y = 0 },
-        loc_txt = {
-            name = "Foolsnapz",
-            text = {
-                "Creates the last",
-                "{C:tarot}Tarot{} or {C:planet}Planet{} card",
-                "used during this run",
-                "{s:0.9,C:tarot}Just one!",
-            },
-        },
-        loc_vars = function(self, info_queue, card)
-            -- Copied from the base game
-            local fool_c = G.GAME.last_tarot_planet and G.P_CENTERS[G.GAME.last_tarot_planet] or nil
-            local last_tarot_planet = fool_c and localize { type = 'name_text', key = fool_c.key, set = fool_c.set } or
-                localize('k_none')
-            local colour = (not fool_c or fool_c.name == 'The Fool') and G.C.RED or G.C.GREEN
-            local main_end = {
-                {
-                    n = G.UIT.C,
-                    config = { align = "bm", padding = 0.02 },
-                    nodes = {
-                        {
-                            n = G.UIT.C,
-                            config = { align = "m", colour = colour, r = 0.05, padding = 0.05 },
-                            nodes = {
-                                { n = G.UIT.T, config = { text = ' ' .. last_tarot_planet .. ' ', colour = G.C.UI.TEXT_LIGHT, scale = 0.3, shadow = true } },
-                            }
-                        }
-                    }
-                }
-            }
-            local loc_vars = { last_tarot_planet }
-            if not (not fool_c or fool_c.name == 'The Fool') then
-                info_queue[#info_queue + 1] = fool_c
-            end
-
-            return {
-                vars = loc_vars,
-                main_end = main_end,
-            }
-        end,
-    },
-    false -- true = silent | suppresses mod badge
-)
-
-SMODS.Consumable:take_ownership('hanged_man',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 2, y = 1 },
-		loc_txt = {
-			name = "Varghus",
-			text = {
-				"Destroys up to",
-                "{C:attention}#1#{} selected cards",
-				"{C:black,s:0.9}Lost in black wings"
-			},
-		},
-		loc_vars = function(self, info_queue, card)
-			return { vars = { card.ability.max_highlighted } }
-		end,
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Consumable:take_ownership('high_priestess',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 2, y = 0 },
-		loc_txt = {
-			name = "Echo",
-			text = {
-				"Creates up to {C:attention}#1#",
-				"random {C:planet}Planet{} cards",
-				"{C:inactive}(Must have room)",
-				"{C:blue,s:0.9}Celestial flames"
-			},
-		},
-		loc_vars = function(self, info_queue, card)
-			return { vars = { card.ability.planets } }
-		end,
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-
-SMODS.Consumable:take_ownership('tower',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 6, y = 1 },
-		loc_txt = {
-			name = "Degyn",
-			text = {
-				"Enhances {C:attention}#2#{} selected",
-				"card into an",
-				"{C:attention}#1#",
-			},
-		},
-		loc_vars = function(self, info_queue, card)
-			info_queue[#info_queue+1] = G.P_CENTERS.m_stone
-			return {
-				vars = {
-					localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv },
-					card.ability.max_highlighted
-				}
-			}
-		end,
-	},
-	false -- true = silent | suppresses mod badge
-)
---#endregion
---#region ===== Spectrals =====
-SMODS.Consumable:take_ownership('immolate',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 9, y = 4 },
-		loc_txt = {
-			name = "Immolate",
-			text = {
-				"Destroys {C:attention}#1#{} random",
-				"cards in hand,",
-				"gain {C:money}$#2#",
-				"{C:inactive,s:0.9}Dragon insurance pays off"
-			},
-		},
-		loc_vars = function(self, info_queue, card)
-			return { vars = { card.ability.extra.destroy, card.ability.extra.dollars } }
-		end,
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-
-SMODS.Consumable:take_ownership('medium',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 4, y = 5 },
-		loc_txt = {
-			name = "Void Gift",
-			text = {
-				"One card receives the",
-				"{C:purple}Reaper's Mark{}",
-			},
-		},
-		loc_vars = function (self, info_queue, card)
-			info_queue[#info_queue+1] = {key = 'purple_seal', set = 'Other'}
-		end
-	},
-	false -- true = silent | suppresses mod badge
-)
-
-SMODS.Consumable:take_ownership('soul',
-	{
-		atlas = atlas.consumables.key,
-		pos = { x = 2, y = 2 },
-		-- soul_pos = { x = 6, y = 5 }, -- this would have worked if the game didn't use G.shared_soul for just this one card for some reason
-		loc_txt = {
-			name = "Oh Snap(z)!",
-			text = {
-				"{C:legendary,E:1,s:0.8}A rat!{}",
-				"Creates a {C:legendary}Legendary{} Joker"
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
+replace_atlas_for(SMODS.Consumable, atlas.consumables.key, {
+	--#region ===== Tarots =====
+	"chariot",
+	"fool",
+	"hanged_man",
+	"high_priestess",
+	"tower",
+	--#endregion
+	--#region ===== Spectrals =====
+	"immolate",
+	"medium",
+	"soul",
+	--#endregion
+})
 
 -- Override The Soul floating sprite, since it's not actually a floating_sprite for some reason (and so it doesn't use soul_pos)
 -- This needs to be called after our atlases are loaded, hence the event manager
@@ -1125,43 +446,15 @@ G.E_MANAGER:add_event(Event({
 }))
 
 --#endregion
---#endregion
 
 --#region ===== Editions/Seals/Extra =====
 
-SMODS.Seal:take_ownership('Purple',
-	{
-		atlas = atlas.enhancers.key,
-		pos = { x = 4, y = 4 },
-		loc_txt = {
-			name = "Reaper's Mark",
-			text = {
-				"Creates a {C:tarot}Tarot{} card",
-				"when {C:attention}discarded",
-				"{C:inactive}(Must have room)",
-				"{C:tarot,s:0.9}A gift from the Void",
-			},
-		},
-	},
-	false -- true = silent | suppresses mod badge
-)
+replace_atlas_for(SMODS.Seal, atlas.enhancers.key, {
+	"Purple",
+})
 
-SMODS.Enhancement:take_ownership('stone',
-	{
-		atlas = atlas.enhancers.key,
-		pos = { x = 5, y = 0 },
-		loc_txt = {
-			name = "Obscured Card",
-			text = {
-				"{C:chips}+#1#{} Chips",
-                "no rank or suit",
-			},
-		},
-		loc_vars = function(self, info_queue, card)
-			return { vars = { card.ability.bonus } }
-		end,
-	},
-	false -- true = silent | suppresses mod badge
-)
+replace_atlas_for(SMODS.Enhancement, atlas.enhancers.key, {
+	"stone",
+})
 
 --endregion
