@@ -315,7 +315,7 @@ return {
             m_stone = {
                 name = "Obscured Card",
                 text = {
-                    "{C:chips}+#1#{} Chips",
+                    "{C:chips}#1#{} Chips",
                     "no rank or suit",
                 },
             }
