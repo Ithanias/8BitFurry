@@ -632,7 +632,6 @@ SMODS.Joker:take_ownership('caino',
 --#region ===== Consumables =====
 
 --#region ===== Tarots =====
---For all consumables, redefine loc_vars and provide base game variables again
 
 SMODS.Consumable:take_ownership('chariot',
 	{
@@ -648,37 +647,6 @@ SMODS.Consumable:take_ownership('fool',
         atlas = atlas.consumables.key,
         pos = { x = 0, y = 0 },
 		-- loc_txt in localization file
-        loc_vars = function(self, info_queue, card)
-            -- Copied from the base game
-            local fool_c = G.GAME.last_tarot_planet and G.P_CENTERS[G.GAME.last_tarot_planet] or nil
-            local last_tarot_planet = fool_c and localize { type = 'name_text', key = fool_c.key, set = fool_c.set } or
-                localize('k_none')
-            local colour = (not fool_c or fool_c.name == 'The Fool') and G.C.RED or G.C.GREEN
-            local main_end = {
-                {
-                    n = G.UIT.C,
-                    config = { align = "bm", padding = 0.02 },
-                    nodes = {
-                        {
-                            n = G.UIT.C,
-                            config = { align = "m", colour = colour, r = 0.05, padding = 0.05 },
-                            nodes = {
-                                { n = G.UIT.T, config = { text = ' ' .. last_tarot_planet .. ' ', colour = G.C.UI.TEXT_LIGHT, scale = 0.3, shadow = true } },
-                            }
-                        }
-                    }
-                }
-            }
-            local loc_vars = { last_tarot_planet }
-            if not (not fool_c or fool_c.name == 'The Fool') then
-                info_queue[#info_queue + 1] = fool_c
-            end
-
-            return {
-                vars = loc_vars,
-                main_end = main_end,
-            }
-        end,
     },
     false -- true = silent | suppresses mod badge
 )
@@ -777,9 +745,6 @@ SMODS.Enhancement:take_ownership('stone',
 		atlas = atlas.enhancers.key,
 		pos = { x = 5, y = 0 },
 		-- loc_txt in localization file
-		loc_vars = function(self, info_queue, card)
-			return { vars = { card.ability.bonus } }
-		end,
 	},
 	false -- true = silent | suppresses mod badge
 )
