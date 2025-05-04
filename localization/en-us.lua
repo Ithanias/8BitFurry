@@ -358,9 +358,9 @@ return {
             c_tower = {
                 name = "Degyn",
                 text = {
-                    "Enhances {C:attention}#2#{} selected",
+                    "Enhances {C:attention}#1#{} selected",
                     "card into an",
-                    "{C:attention}#1#",
+                    "{C:attention}#2#",
                 },
             },
         },
