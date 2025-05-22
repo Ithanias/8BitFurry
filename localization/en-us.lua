@@ -186,6 +186,15 @@ return {
                     "card of any other {C:attention}suit",
                     "{C:blue,s:0.8}Different, yet the same"
                 },
+            },    
+            j_shortcut = {
+                name = "Crouton",
+                text = {
+                    "Allows {C:attention}Straights{} to be",
+                    "made with gaps of {C:attention}1 rank",
+                    "{C:inactive}(ex: {C:attention}10 8 6 5 3{C:inactive})",
+                    "{C:red,s:0.8}A bit stuck...",
+                },
             },
             j_smeared = {
                 name = "Smeared Kobold",

@@ -369,6 +369,7 @@ replace_atlas_for(SMODS.Joker, atlas.jokers.key, {
 	oops = { soul_pos = { x = 10, y = 3 } },
 	"rocket",
 	"seeing_double",
+	"shortcut",
 	"smeared",
 	"sock_and_buskin",
 	"steel_joker",
