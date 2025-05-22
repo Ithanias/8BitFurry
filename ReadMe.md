@@ -37,7 +37,7 @@ Version 0.0.5a
 - Diamonds: Jack, Queen, King, Ace
 - Spades: Jack, Queen, King, Ace
 
-## Jokers: (30/150)
+## Jokers: (31/150)
 - Baron
 - Baseball Card
 - Blue Joker
@@ -59,6 +59,7 @@ Version 0.0.5a
 - Riff Raff
 - Rocket
 - Seeing Double
+- Shortcut
 - Smeared Joker
 - Sock and Buskin
 - Splash
@@ -73,6 +74,7 @@ Version 0.0.5a
 - Immolate
 - Medium (and the Purple Seal)
 - Soul
+- Trance (and Blue Seal)
 
 ## Tarots:
 - The Fool
