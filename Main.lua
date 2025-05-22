@@ -425,6 +425,7 @@ replace_atlas_for(SMODS.Consumable, atlas.consumables.key, {
 	"immolate",
 	"medium",
 	"soul",
+	"trance"
 	--#endregion
 })
 
@@ -451,6 +452,10 @@ G.E_MANAGER:add_event(Event({
 
 replace_atlas_for(SMODS.Seal, atlas.enhancers.key, {
 	"Purple",
+})
+
+replace_atlas_for(SMODS.Seal, atlas.enhancers.key, {
+	"Blue",
 })
 
 replace_atlas_for(SMODS.Enhancement, atlas.enhancers.key, {
