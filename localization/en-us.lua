@@ -389,6 +389,15 @@ return {
                     "{C:inactive,s:0.9}Dragon insurance pays off"
                 },
             },
+            c_trance = {
+                name = "Morca",
+                text = {
+                    "Add a {C:blue}Blue Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
+                    "{C:red,s:0.9}Morca"
+                },
+            },
         },
         Other = {
             purple_seal = {
@@ -400,6 +409,16 @@ return {
                     "{C:tarot,s:0.9}A gift from the Void",
                 },
             },
-        }
+            blue_seal = {
+                name = "Stargazer's Eye",
+                text = {
+                    "Creates the {C:planet}Planet{} card",
+                    "for final played {C:attention}poker hand{}",
+                    "of round if {C:attention}held{} in hand",
+                    "{C:inactive}(Must have room)",
+                    "{C:blue,s:0.9}Witness the cosmos"
+                },
+            },
+        },
     }
 }
