@@ -374,6 +374,24 @@ return {
             },
         },
         Spectral = {
+            c_cryptid = {
+                name = "Dorian",
+                text = {
+                    "Create {C:attention}#1#{} copies of",
+                    "{C:attention}1{} selected card",
+                    "in your hand",
+                    "{C:attention,s:0.9}Ultra Deer Dream Feet"
+                },
+            },
+            c_hex = {
+                name = "Mercury",
+                text = {
+                    "Add {C:dark_edition}Polychrome{} to a",
+                    "random {C:attention}Joker{}, destroy",
+                    "all other Jokers",
+                    "{C:blue,s:0.9}Now, pierce the heavens!"
+                },
+            },
             c_soul = {
                 name = "Oh Snap(z)!",
                 text = {

@@ -75,6 +75,8 @@ Version 0.0.5a
 - Medium (and the Purple Seal)
 - Soul
 - Trance (and Blue Seal)
+- Hex
+- Cryptid
 
 ## Tarots:
 - The Fool
