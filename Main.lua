@@ -423,6 +423,8 @@ replace_atlas_for(SMODS.Consumable, atlas.consumables.key, {
 	"tower",
 	--#endregion
 	--#region ===== Spectrals =====
+	"cryptid",
+	"hex",
 	"immolate",
 	"medium",
 	"soul",
