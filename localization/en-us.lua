@@ -1,5 +1,15 @@
 return {
     descriptions = {
+        Back = {
+            b_ghost = {
+                name = "Hermes Deck",
+                text = {
+                    "{C:spectral}Spectral{} cards may",
+                    "appear in the shop,",
+                    "start with a {C:spectral,T:c_hex}Mercury Spectral{} card",
+                },
+            },
+        },
         Joker = {
             j_blue_joker = {
                 name = "Blue",
@@ -150,6 +160,15 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                 },
             },
+            j_midas_mask = {
+                name = "Duke",
+                text = {
+                    "All played {C:attention}face{} cards",
+                    "become {C:attention}Honey{} cards",
+                    "when scored",
+                    "{C:blue,s:0.9}Mind the honey, honey~",
+                },
+            },
             j_onyx_agate = {
                 name = "Rhasakani",
                 text = {
@@ -232,6 +251,15 @@ return {
                     "has only {C:attention}1{} card,",
                     "destroy it and earn {C:money}$#1#",
                     "{C:purple,s:0.8}Art by KusariiBites!",
+                },
+            },
+            j_turtle_bean = {
+                name = "Elliot",
+                text = {
+                    "{C:attention}+#1#{} hand size,",
+                    "reduces by",
+                    "{C:red}#2#{} every round",
+                    "{C:attention,s:0.9}Lil rollin' dillo",
                 },
             },
             j_vampire = {
@@ -327,7 +355,15 @@ return {
                     "{C:chips}#1#{} Chips",
                     "no rank or suit",
                 },
-            }
+            },
+            m_gold = {
+                name = "Honey Card",
+                text = {
+                    "{C:money}#1#{} if this",
+                    "card is held in hand",
+                    "at end of round",
+                },
+            },
         },
         Tarot = {
             c_chariot = {

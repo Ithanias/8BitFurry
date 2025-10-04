@@ -365,6 +365,7 @@ replace_atlas_for(SMODS.Joker, atlas.jokers.key, {
 	"fibonacci",
 	"hack",
 	hologram = { soul_pos = { x = 10, y = 10 } },
+	"midas_mask",
 	"onyx_agate",
 	oops = { soul_pos = { x = 10, y = 3 } },
 	"rocket",
@@ -374,6 +375,7 @@ replace_atlas_for(SMODS.Joker, atlas.jokers.key, {
 	"sock_and_buskin",
 	"steel_joker",
 	"trading",
+	"turtle_bean",
 	"vampire",
 	--endregion
 	--region ===Rare===
@@ -453,6 +455,10 @@ G.E_MANAGER:add_event(Event({
 
 --#region ===== Editions/Seals/Extra =====
 
+replace_atlas_for(SMODS.Back, atlas.enhancers.key, {
+	"ghost",
+})
+
 replace_atlas_for(SMODS.Seal, atlas.enhancers.key, {
 	"Purple",
 })
@@ -463,6 +469,7 @@ replace_atlas_for(SMODS.Seal, atlas.enhancers.key, {
 
 replace_atlas_for(SMODS.Enhancement, atlas.enhancers.key, {
 	"stone",
+	"gold",
 })
 
 --endregion
