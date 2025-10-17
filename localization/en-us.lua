@@ -31,8 +31,73 @@ return {
                     "{C:attention,s:0.8}Art by FuzzyRemi!",
                 },
             },
+            j_clever = {
+                name = "Clever Jokor",
+                text = {
+                    "{C:chips}+#1#{} Chips if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                },
+            },
+            j_crafty = {
+                name = "Crafty Jokor",
+                text = {
+                    "{C:chips}+#1#{} Chips if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                },
+            },
+            j_crazy = {
+                name = "Crazy Jokor",
+                text = {
+                    "{C:red}+#1#{} Mult if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                },
+            },
+            j_devious = {
+                name = "Devious Jokor",
+                text = {
+                    "{C:chips}+#1#{} Chips if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                },
+            },
+            j_droll = {
+                name = "Droll Jokor",
+                text = {
+                    "{C:red}+#1#{} Mult if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                },
+            },
+            j_faceless = {
+                name = "Faceless Jokor",
+                text = {
+                    "Earn {C:money}$#1#{} if {C:attention}#2#{} or",
+                    "more {C:attention}face cards{}",
+                    "are discarded",
+                    "at the same time",
+                },
+            },
+            j_gluttenous_joker = {
+                name = "Gluttonous Jokor",
+                text = {
+                    "Played cards with",
+                    "{C:clubs}#2#{} suit give",
+                    "{C:mult}+#1#{} Mult when scored",
+                },
+            },
+            j_greedy_joker = {
+                name = "Greedy Jokor",
+                text = {
+                    "Played cards with",
+                    "{C:diamonds}#2#{} suit give",
+                    "{C:mult}+#1#{} Mult when scored",
+                },
+            },
             j_green_joker = {
-                name = "Green Joker",
+                name = "Green Jokor",
                 text = {
                     "{C:mult}+#1#{} Mult per hand played",
                     "{C:mult}-#2#{} Mult per discard",
@@ -50,6 +115,14 @@ return {
                     "{C:attention,s:0.8}Art by FuzzyRemi!",
                 },
             },
+            j_half = {
+                name = "Half Jokor",
+                text = {
+                    "{C:red}+#1#{} Mult if played",
+                    "hand contains",
+                    "{C:attention}#2#{} or fewer cards",
+                },
+            },
             j_ice_cream = {
                 name = "Bedi",
                 text = {
@@ -60,9 +133,47 @@ return {
                 },
             },
             j_joker = {
-                name = "Jimbo",
+                name = "JoKor",
                 text = {
                     "{C:red,s:1.1}+#1#{} Mult",
+                },
+            },
+            j_jolly={
+                name="Jolly Jokor",
+                text={
+                    "{C:red}+#1#{} Mult if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                },
+            },
+            j_lusty_joker = {
+                name = "Lusty Jokor",
+                text = {
+                    "Played cards with",
+                    "{C:hearts}#2#{} suit give",
+                    "{C:mult}+#1#{} Mult when scored",
+                },
+            },
+            j_mad = {
+                name = "Mad Jokor",
+                text = {
+                    "{C:red}+#1#{} Mult if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                },
+            },
+            j_misprint = {
+                name = "Misprint",
+                text = {
+                    "",
+                },
+            },
+            j_sly = {
+                name = "Sly Jokor",
+                text = {
+                    "{C:chips}+#1#{} Chips if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
                 },
             },
             j_splash = {
@@ -80,6 +191,30 @@ return {
                     "create {C:attention}#1# {C:blue}Common{C:attention} Jokers",
                     "{C:inactive}(Must have room)",
                     "{C:blue,s:0.9}Lifetime supply of kobolds",
+                },
+            },
+            j_wily = {
+                name = "Wily Jokor",
+                text = {
+                    "{C:chips}+#1#{} Chips if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
+                },
+            },
+            j_wrathful_joker = {
+                name = "Wrathful Jokor",
+                text = {
+                    "Played cards with",
+                    "{C:spades}#2#{} suit give",
+                    "{C:mult}+#1#{} Mult when scored",
+                },
+            },
+            j_zany = {
+                name = "Zany Jokor",
+                text = {
+                    "{C:red}+#1#{} Mult if played",
+                    "hand contains",
+                    "a {C:attention}#2#",
                 },
             },
             j_bootstraps = {
@@ -242,6 +377,15 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                     "{C:planet,s:0.9}Beep",
                     "{C:red,s:0.8}Art by LaserFire!",
+                },
+            },
+            j_stencil = {
+                name = "Jokor Stencil",
+                text = {
+                    "{X:red,C:white} X1 {} Mult for each",
+                    "empty {C:attention}Joker{} slot",
+                    "{s:0.8}Joker Stencil included",
+                    "{C:inactive}(Currently {X:red,C:white} X#1# {C:inactive})",
                 },
             },
             j_trading = {
