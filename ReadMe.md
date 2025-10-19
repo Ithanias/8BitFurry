@@ -13,8 +13,7 @@ By Ithanias & Metaflame
 
 Version 0.0.6
 
-### Mod must be played with "Pixel Art Smoothing" ON! It will crash if this option is off!
-
+### Mod can now be played with "Pixel Art Smoothing" OFF!
 ---
 
 # Installation
@@ -116,6 +115,8 @@ Version 0.0.6
 # Changes:
 
 ## 0.0.6
+- Finally fixed the crash that would occur if "Pixel Art Smoothing" was disabled!
+  - Some cards do look a bit crusty with this off, but now you have the option!
 - Low tier Jokers changed, some uncommon and rare additions, and Gold Cards changed
 ## 0.0.5a
 - More cards changed
