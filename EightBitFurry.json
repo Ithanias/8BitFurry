@@ -9,5 +9,5 @@
 		"Steamodded (>=1.0.0~ALPHA-1404b)"
 	],
 	"main_file": "Main.lua",
-	"version": "0.0.5a"
+	"version": "0.0.6"
 }

@@ -37,7 +37,7 @@ Version 0.0.5a
 - Diamonds: Jack, Queen, King, Ace
 - Spades: Jack, Queen, King, Ace
 
-## Jokers: (34/150)
+## Jokers: (55/150)
 - Baron
 - Baseball Card
 - Blue Joker
@@ -46,32 +46,53 @@ Version 0.0.5a
 - Canio
 - Cavendish
 - Ceremonial Dagger
+- Clever Joker
 - Cloud 9
 - Constellation
+- Crafty Joker
+- Crazy Joker
+- Devious Joker
+- DNA
+- Droll Joker
 - Erosion
+- Faceless
 - Fibonacci
+- Gluttonous Joker
+- Golden Joker
 - Gros Michel
 - Hack
+- Half Joker
 - Hologram
 - Ice Cream
 - Jimbo
+- Jolly Joker
+- Lusty Joker
+- Mad Joker
 - Midas Mask
+- Misprint
 - Obelisk
+- Onyx Agate
 - Oops All 6s
 - Riff Raff
 - Rocket
+- Scholar
 - Seeing Double
 - Shortcut
+- Sly Joker
 - Smeared Joker
 - Sock and Buskin
 - Splash
 - Steel Joker
+- Stencil
 - Stuntman
 - Trading Card
 - Trio
 - Turtle Bean
 - Vampire
 - Wee Joker
+- Wily Joker
+- Wrathful Joker
+- Zany Joker
 
 ## Spectrals:
 - Immolate
@@ -94,7 +115,9 @@ Version 0.0.5a
 
 # Changes:
 
+## 0.0.6
+- Low tier Jokers changed, some uncommon and rare additions, and Gold Cards changed
 ## 0.0.5a
-
+- More cards changed
 ## 0.0.4
 - Al now properly pwips (Fool displays what card it's copying)

@@ -88,6 +88,14 @@ return {
                     "{C:mult}+#1#{} Mult when scored",
                 },
             },
+            j_golden = {
+                name = "Golden Banana",
+                text = {
+                    "Earn {C:money}$#1#{} at",
+                    "end of round",
+                    "{C:money,s:1.1}Ohh, Banana!",
+                },
+            },
             j_greedy_joker = {
                 name = "Greedy Jokor",
                 text = {
@@ -166,6 +174,16 @@ return {
                 name = "Misprint",
                 text = {
                     "",
+                },
+            },
+            j_scholar = {
+                name = "Ace Jokor",
+                text = {
+                    "Played {C:attention}Aces{}",
+                    "give {C:chips}+#2#{} Chips",
+                    "and {C:mult}+#1#{} Mult",
+                    "when scored",
+                    "{C:tarot,s:1.1}Aces~",
                 },
             },
             j_sly = {
@@ -441,6 +459,16 @@ return {
                     "when {C:attention}Boss Blind{} is defeated",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                     "{C:red,s:0.9}A cozy spot to rest"
+                },
+            },
+            j_dna = {
+                name = "Sykes",
+                text = {
+                    "If {C:attention}first hand{} of round",
+                    "has only {C:attention}1{} card, add a",
+                    "permanent copy to deck",
+                    "and draw it to {C:attention}hand",
+                    "{C:blue,s:0.9}Sample and Copy~",
                 },
             },
             j_obelisk = {
