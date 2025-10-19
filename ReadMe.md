@@ -11,7 +11,7 @@
 
 By Ithanias & Metaflame
 
-Version 0.0.5a
+Version 0.0.6
 
 ### Mod must be played with "Pixel Art Smoothing" ON! It will crash if this option is off!
 
